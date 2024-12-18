@@ -1,0 +1,66 @@
+model_name: "LASSL"
+root: "./data/cifar10"
+results: "./results"
+checkpoint: ""
+ema_checkpoint: ""
+workers: 1
+gpu_ids: 0 
+
+seed: 0
+n_epoches: 1024 # 512, 1024
+n_imgs_per_epoch: 65536 # 64 * 1024
+batchsize: 64
+mu: 7
+print_freq: 128
+# optimizer and lr
+lr: 0.03
+weight_decay: 0.0005 #5e-4
+momentum: 0.9
+
+# dataset
+dataset: "CIFAR10"  
+n_classes: 10     
+n_labeled: 40
+
+# model options
+wresnet_k: 2
+wresnet_n: 28
+use_ema_model: True
+ema_m: 0.999
+
+lambda_semi: 1.0
+threshold: 0.95
+ratio_threshold: 0.90
+step: 0.005
+lambda_cont: 1.0
+rampdown_fix_len: 30
+rampdown_delta: 1.0
+rampdown_lpa_thr: 0.3
+rampdown_cacl_thr: 0.1
+
+low_dim: 64
+temperature: 0.2
+contrast_th: 0.8
+
+blpa_join_early: True
+blpa_join_later: True
+
+lpa_alpha: 0.8
+lpa_topk: 15 
+knn_mid_num: 512
+
+use_buffer_bootstrap: True
+bootstrap_thred: 0.95
+bootstrap_nums: 7 # 5, 7, 9
+bootstrap_ratio: 0.8
+
+embedding_pseudo_ratio: 0.2
+lpa_ramp_down: False
+
+mda_hist_mom: 0.99  
+label_aug: "self_weak" 
+unlabel_aug: "semi"
+
+MDA: True
+CACL: True
+BLPA: True
