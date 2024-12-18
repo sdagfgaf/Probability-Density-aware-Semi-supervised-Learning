@@ -1,7 +1,5 @@
-- We implement GPU-based N-W density estimation after extracting features from all images. The probability density information is then used to reweight the adjacency matrix. Since the density estimation is orthogonal to the training procedure, it can be conveniently integrated into other algorithms
-
-You can start training process by typing
-
+- Here we show our implemention based on the baseline model, LASSL, as mentioned in our paper. We focus on integrating the probability-density information into the LPA and thus fully consider the cluster assumption. 
+- You can start training process by typing
 ```sh
 python train.py -c config/lassl_cifar10.yaml
 ```
